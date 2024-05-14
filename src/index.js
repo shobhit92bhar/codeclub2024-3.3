@@ -13,6 +13,7 @@ export default {
 		const defaultOrigin = "https://www.shobhit92bhar.com/headers.php";
 		const botOrigin = "https://httpbin.org/get"
 		const botScore = request.cf.botManagement.score;
+		console.log(botScore);
 		if (botScore < 30)
 		{
 			const botRequest = new Request(botOrigin);
@@ -21,7 +22,7 @@ export default {
 		}
 		else {
 			const normalRequest = new Request(defaultOrigin);
-			let normalResponse = await fetch(normalResponse);
+			let normalResponse = await fetch(normalRequest);
 			return normalResponse;
 		}
 		/*return new Response('Hello World!');*/
